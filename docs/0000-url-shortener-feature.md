@@ -1,0 +1,42 @@
+---
+# These are optional elements. Feel free to remove any of them.
+status: proposed
+date: 2022-08-17
+deciders: Kristin Collins
+---
+# URL Shortener Feature
+
+## Context and Problem Statement
+
+We need the ability to shorten Fathom Analytic campaign URLs for social media.
+
+## Decision Drivers
+
+* URLs that contain UTM tracking are very long.
+* Social media has character limits for posts.
+* We might want to update the links we provide advertisers without having to request the change directly from them.
+
+## Flowchart
+
+```mermaid
+graph TD
+    A[[URL Shortener]] ---> B([Get URL Slug])
+    B --> C{Slug Exists in DB?}
+    C --> D((Yes))
+    C --> E((No))
+    D --> F([Redirect to Long URL])
+    E --> G([Throw 404 Error])
+```
+## ERD
+```mermaid
+erDiagram
+    REDIRECT 
+    REDIRECT {
+        int id PK "auto increment"
+        varchar slug "unique, max(5)"
+        text url
+        datetime created_at
+        datetime updated_at
+        datetime deleted_at "nullable"
+    }
+```
