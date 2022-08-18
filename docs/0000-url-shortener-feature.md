@@ -1,7 +1,7 @@
 ---
 # These are optional elements. Feel free to remove any of them.
-status: proposed
-date: 2022-08-17
+status: accepted
+date: 2022-08-18
 deciders: Kristin Collins
 ---
 # URL Shortener Feature
@@ -24,8 +24,9 @@ graph TD
     B --> C{Slug Exists in DB?}
     C --> D((Yes))
     C --> E((No))
-    D --> F([Redirect to Long URL])
-    E --> G([Throw 404 Error])
+    D --> F([Track Visit])
+    F --> G([Redirect to Long URL])
+    E --> H([Throw 404 Error])
 ```
 ## ERD
 ```mermaid
@@ -35,6 +36,7 @@ erDiagram
         int id PK "auto increment"
         varchar slug "unique, max(5)"
         text url
+        int visits "default 0"
         datetime created_at
         datetime updated_at
         datetime deleted_at "nullable"
