@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('{redirect:slug}', function (Redirect $redirect) {
+    $redirect->increment('visits');
+
+    return redirect()->away($redirect->url);
 });

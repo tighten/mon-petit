@@ -14,7 +14,7 @@ class RedirectFactory extends Factory
         return [
             'slug' => substr(now()->timestamp, 0, 5),
             'url' => $this->faker->url(),
-            'visits' => $this->faker->randomNumber(),
+            'visits' => 0,
             'deleted_at' => null,
         ];
     }
