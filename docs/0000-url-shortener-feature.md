@@ -34,7 +34,7 @@ erDiagram
     REDIRECT 
     REDIRECT {
         int id PK "auto increment"
-        varchar slug "unique, max(5)"
+        varchar slug "unique, max(50)"
         text url
         int visits "default 0"
         datetime created_at

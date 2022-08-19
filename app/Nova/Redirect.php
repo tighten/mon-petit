@@ -27,9 +27,9 @@ class Redirect extends Resource
             Text::make('Slug')->sortable()
                 ->default(function () {
                     $unique = uniqid();
-                    return substr($unique, (strlen($unique) - 6), 5);
+                    return substr($unique, (strlen($unique) - 9), 8);
                 })
-                ->rules('required', 'max:5', 'string')
+                ->rules('required', 'max:50', 'string')
                 ->creationRules('unique:redirects,slug')
                 ->updateRules('unique:redirects,slug,{{resourceId}}'),
             Number::make('Visits')->sortable()

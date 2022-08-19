@@ -12,7 +12,7 @@ class RedirectFactory extends Factory
     public function definition(): array
     {
         return [
-            'slug' => substr(now()->timestamp, 0, 5),
+            'slug' => substr(now()->timestamp, 0, 8),
             'url' => $this->faker->url(),
             'visits' => 0,
             'deleted_at' => null,
