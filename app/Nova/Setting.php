@@ -22,11 +22,14 @@ class Setting extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Key')->sortable(),
+            Text::make('Key')->sortable()
+                ->required()
+                ->rules('required', 'string', 'max:50'),
             KeyValue::make('Value')->keyLabel('Pascal Case')
                 ->valueLabel('Snake Case')
                 ->actionText('Add Item')
-                ->rules('json'),
+                ->required()
+                ->rules('required', 'json'),
         ];
     }
 
