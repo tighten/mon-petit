@@ -18,4 +18,28 @@ class SettingTest extends TestCase
             'value' => json_encode($setting->value),
         ]);
     }
+
+    /** @test */
+    public function settings_seeded_with_campaigns()
+    {
+        $this->assertDatabaseHas('settings', [
+            'key' => 'campaigns',
+        ]);
+    }
+
+    /** @test */
+    public function settings_seeded_with_sources()
+    {
+        $this->assertDatabaseHas('settings', [
+            'key' => 'sources',
+        ]);
+    }
+
+    /** @test */
+    public function settings_seeded_with_mediums()
+    {
+        $this->assertDatabaseHas('settings', [
+            'key' => 'mediums',
+        ]);
+    }
 }
