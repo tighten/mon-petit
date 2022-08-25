@@ -25,8 +25,8 @@ class Setting extends Resource
             Text::make('Key')->sortable()
                 ->required()
                 ->rules('required', 'string', 'max:50'),
-            KeyValue::make('Value')->keyLabel('Pascal Case')
-                ->valueLabel('Snake Case')
+            KeyValue::make('Value')->keyLabel('Value (snake case)')
+                ->valueLabel('Label (for dropdown)')
                 ->actionText('Add Item')
                 ->required()
                 ->rules('required', 'json'),

@@ -12,41 +12,40 @@ class SettingSeeder extends Seeder
         Setting::create([
             'key' => 'campaigns',
             'value' => [
-                'blog_post',
-                'advertisement',
-                'podcast',
-                'promo',
+                'blog_post' => 'Blog Post',
+                'advertisement' => 'Advertisement',
+                'podcast' => 'Podcast',
+                'promo' => 'Promo',
             ],
         ]);
 
         Setting::create([
             'key' => 'sources',
             'value' => [
-                'twitter',
-                'linkedin',
-                'facebook',
-                'youtube',
-                'laravel',
-                'livewire',
-                'github',
-                'laravel_news',
-                'freek',
-                'calebporzio',
-                'mattstauffer',
-                'jigsaw',
-                'laracasts',
+                'twitter' => 'Twitter',
+                'linkedin' => 'LinkedIn',
+                'facebook' => 'Facebook',
+                'youtube' => 'YouTube',
+                'laravel' => 'Laravel',
+                'livewire' => 'Livewire',
+                'github' => 'GitHub',
+                'laravel_news' => 'Laravel News',
+                'calebporzio' => 'calebporzio.com',
+                'mattstauffer' => 'mattstauffer.COM',
+                'jigsaw' => 'Jigsaw',
+                'laracasts' => 'Laracasts',
             ],
         ]);
 
         Setting::create([
             'key' => 'mediums',
             'value' => [
-                'post',
-                'banner',
-                'email',
-                'link',
-                'search',
-                'sponsor',
+                'post' => 'Post',
+                'banner' => 'Banner',
+                'email' => 'Email',
+                'link' => 'Link',
+                'search' => 'Search',
+                'sponsor' => 'Sponsor',
             ],
         ]);
     }

@@ -4,7 +4,7 @@ status: accepted
 date: 2022-08-23
 deciders: Kristin Collins
 ---
-# Storage for list of UTM options.
+# Storage for list of tracking options.
 
 ## Context and Problem Statement
 
