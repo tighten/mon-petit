@@ -55,7 +55,8 @@ class TrackingLink extends Resource
                 ->sortable()
                 ->help('Input will be snake cased when added to the URL.'),
             Text::make('UTM URL', 'utm_url')
-                ->exceptOnForms(),
+                ->exceptOnForms()
+                ->copyable(),
         ];
     }
 
